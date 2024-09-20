@@ -12,55 +12,131 @@
     <header>
         <nav>
             <h1>Florida PALM</h1>
-            <ul>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#accounts-receivable">Accounts Receivable</a></li>
-                <li><a href="#case-management">Case Management</a></li>
-                <li><a href="#crm-management">CRM Management</a></li>
-                <li><a href="#reports">Reports</a></li>
-            </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Dashboard Overview Section -->
-        <section id="dashboard" class="dashboard-section">
+        <!-- Tab navigation -->
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'dashboard')">Dashboard</button>
+            <button class="tab-button" onclick="openTab(event, 'accounts-receivable')">Accounts Receivable</button>
+            <button class="tab-button" onclick="openTab(event, 'case-management')">Case Management</button>
+            <button class="tab-button" onclick="openTab(event, 'crm-management')">CRM Management</button>
+            <button class="tab-button" onclick="openTab(event, 'reports')">Reports</button>
+            <button class="tab-button" onclick="openTab(event, 'settings')">Settings</button>
+            <button class="tab-button" onclick="openTab(event, 'expenses')">Expenses</button>
+            <button class="tab-button" onclick="openTab(event, 'budget')">Budget</button>
+            <button class="tab-button" onclick="openTab(event, 'payables')">Payables</button>
+            <button class="tab-button" onclick="openTab(event, 'assets')">Assets</button>
+            <button class="tab-button" onclick="openTab(event, 'liabilities')">Liabilities</button>
+            <button class="tab-button" onclick="openTab(event, 'revenue')">Revenue</button>
+            <button class="tab-button" onclick="openTab(event, 'equity')">Equity</button>
+            <button class="tab-button" onclick="openTab(event, 'cashflow')">Cash Flow</button>
+            <button class="tab-button" onclick="openTab(event, 'networth')">Net Worth</button>
+        </div>
+
+        <!-- Tab content -->
+        <section id="dashboard" class="tab-content">
             <h2>Dashboard Overview</h2>
             <div class="dashboard-container" id="dashboard-container">
-                <!-- Dash app will render the dashboard content here -->
+                <!-- Dash app will render the Dashboard content here -->
             </div>
         </section>
 
-        <!-- Accounts Receivable Section -->
-        <section id="accounts-receivable" class="dashboard-section">
+        <section id="accounts-receivable" class="tab-content">
             <h2>Accounts Receivable Management</h2>
-            <div class="dashboard-container" id="accounts-receivable-container">
-                <!-- Dash app will render the Accounts Receivable content here -->
+            <div class="sub-tabs">
+                <button class="sub-tab-button" onclick="openSubTab(event, 'receivables')">Receivables Management</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'payments')">Payments</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'invoices')">Invoices</button>
+                <button class="sub-tab-button" onclick="openSubTab(event, 'pending-payables')">Pending Payables</button>
+            </div>
+            <div id="receivables" class="sub-tab-content">
+                <!-- Receivables Management Content -->
+            </div>
+            <div id="payments" class="sub-tab-content">
+                <!-- Payments Content -->
+            </div>
+            <div id="invoices" class="sub-tab-content">
+                <!-- Invoices Content -->
+            </div>
+            <div id="pending-payables" class="sub-tab-content">
+                <!-- Pending Payables Content -->
             </div>
         </section>
 
-        <!-- Case Management Section -->
-        <section id="case-management" class="dashboard-section">
+        <section id="case-management" class="tab-content">
             <h2>Case Management</h2>
             <div class="dashboard-container" id="case-management-container">
                 <!-- Dash app will render the Case Management content here -->
             </div>
         </section>
 
-        <!-- CRM Management Section -->
-        <section id="crm-management" class="dashboard-section">
+        <section id="crm-management" class="tab-content">
             <h2>CRM Management</h2>
             <div class="dashboard-container" id="crm-management-container">
                 <!-- Dash app will render the CRM Management content here -->
             </div>
         </section>
 
-        <!-- Reports Section -->
-        <section id="reports" class="dashboard-section">
+        <section id="reports" class="tab-content">
             <h2>Reports</h2>
             <div class="dashboard-container" id="reports-container">
                 <!-- Dash app will render the Reports content here -->
             </div>
+        </section>
+
+        <section id="settings" class="tab-content">
+            <h2>Settings</h2>
+            <div class="dashboard-container" id="settings-container">
+                <!-- Settings content -->
+            </div>
+        </section>
+
+        <!-- Additional Sections -->
+        <section id="expenses" class="tab-content">
+            <h2>Expenses</h2>
+            <div class="dashboard-container" id="expenses-container"></div>
+        </section>
+
+        <section id="budget" class="tab-content">
+            <h2>Budget</h2>
+            <div class="dashboard-container" id="budget-container"></div>
+        </section>
+
+        <section id="payables" class="tab-content">
+            <h2>Payables</h2>
+            <div class="dashboard-container" id="payables-container"></div>
+        </section>
+
+        <section id="assets" class="tab-content">
+            <h2>Assets</h2>
+            <div class="dashboard-container" id="assets-container"></div>
+        </section>
+
+        <section id="liabilities" class="tab-content">
+            <h2>Liabilities</h2>
+            <div class="dashboard-container" id="liabilities-container"></div>
+        </section>
+
+        <section id="revenue" class="tab-content">
+            <h2>Revenue</h2>
+            <div class="dashboard-container" id="revenue-container"></div>
+        </section>
+
+        <section id="equity" class="tab-content">
+            <h2>Equity</h2>
+            <div class="dashboard-container" id="equity-container"></div>
+        </section>
+
+        <section id="cashflow" class="tab-content">
+            <h2>Cash Flow</h2>
+            <div class="dashboard-container" id="cashflow-container"></div>
+        </section>
+
+        <section id="networth" class="tab-content">
+            <h2>Net Worth</h2>
+            <div class="dashboard-container" id="networth-container"></div>
         </section>
     </main>
 
@@ -68,8 +144,43 @@
         <p>© 2024 Florida PALM. Designed to engage and inform.</p>
     </footer>
 
-    <!-- JavaScript links and Dash app initialization -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="app.js"></script> <!-- Link to your Dash application JavaScript if needed -->
+    <script>
+        // JavaScript to handle tab switching
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Function to handle sub-tab switching
+        function openSubTab(evt, subTabName) {
+            var i, subTabContent, subTabButtons;
+            subTabContent = document.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subTabContent.length; i++) {
+                subTabContent[i].style.display = "none";
+            }
+            subTabButtons = document.getElementsByClassName("sub-tab-button");
+            for (i = 0; i < subTabButtons.length; i++) {
+                subTabButtons[i].className = subTabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(subTabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Set default active tab
+        document.getElementsByClassName('tab-button')[0].click();
+        document.getElementsByClassName('sub-tab-button')[0]?.click();
+    </script>
 </body>
 </html>
+
