@@ -34,55 +34,60 @@
             <button class="tab-button" onclick="openTab(event, 'cashflow')">Cash Flow</button>
             <button class="tab-button" onclick="openTab(event, 'networth')">Net Worth</button>
         </div>
-
         <!-- Tab content -->
         <section id="dashboard" class="tab-content">
             <h2>Dashboard Overview</h2>
-            <div class="dashboard-container" id="dashboard-container">
-                <!-- Dash app will render the Dashboard content here -->
-            </div>
+            <iframe src="http://127.0.0.1:8050" class="dashboard-iframe"></iframe> <!-- Embed Dash app here -->
         </section>
 
         <section id="accounts-receivable" class="tab-content">
             <h2>Accounts Receivable Management</h2>
-            <div class="sub-tabs">
-                <button class="sub-tab-button" onclick="openSubTab(event, 'receivables')">Receivables Management</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'payments')">Payments</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'invoices')">Invoices</button>
-                <button class="sub-tab-button" onclick="openSubTab(event, 'pending-payables')">Pending Payables</button>
-            </div>
-            <div id="receivables" class="sub-tab-content">
-                <!-- Receivables Management Content -->
-            </div>
-            <div id="payments" class="sub-tab-content">
-                <!-- Payments Content -->
-            </div>
-            <div id="invoices" class="sub-tab-content">
-                <!-- Invoices Content -->
-            </div>
-            <div id="pending-payables" class="sub-tab-content">
-                <!-- Pending Payables Content -->
-            </div>
+            <iframe src="http://127.0.0.1:8050" class="dashboard-iframe"></iframe> <!-- Embed Dash app here -->
         </section>
 
         <section id="case-management" class="tab-content">
             <h2>Case Management</h2>
-            <div class="dashboard-container" id="case-management-container">
-                <!-- Dash app will render the Case Management content here -->
-            </div>
+            <iframe src="http://127.0.0.1:8050" class="dashboard-iframe"></iframe> <!-- Embed Dash app here -->
         </section>
 
         <section id="crm-management" class="tab-content">
             <h2>CRM Management</h2>
-            <div class="dashboard-container" id="crm-management-container">
-                <!-- Dash app will render the CRM Management content here -->
-            </div>
+            <iframe src="http://127.0.0.1:8050" class="dashboard-iframe"></iframe> <!-- Embed Dash app here -->
         </section>
 
         <section id="reports" class="tab-content">
             <h2>Reports</h2>
-            <div class="dashboard-container" id="reports-container">
-                <!-- Dash app will render the Reports content here -->
+            <iframe src="http://127.0.0.1:8050" class="dashboard-iframe"></iframe> <!-- Embed Dash app here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Florida PALM. Designed to engage and inform.</p>
+    </footer>
+
+    <script src="app.js"></script> <!-- Link to your Dash application JavaScript if needed -->
+    <script>
+        // JavaScript to handle tab switching
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Set default active tab
+        document.getElementsByClassName('tab-button')[0].click();
+    </script>
+</body>
+</html>
+
             </div>
         </section>
 
