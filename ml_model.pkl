@@ -1,0 +1,26 @@
+# Load the model using joblib in your Dash application
+import joblib
+import pandas as pd
+import numpy as np
+
+model_path = 'model/ml_model.pkl'  # Adjust this path as needed
+
+# Load the model
+model = joblib.load(model_path)
+print("Model loaded successfully.")
+
+# Define the feature names used during training
+# Replace these with the actual feature names used when training the model
+feature_names = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5',
+                 'feature6', 'feature7', 'feature8', 'feature9', 'feature10']
+
+# Create sample data with the correct feature names
+# Ensure the sample data has the same number of features and matching names
+sample_data = np.random.rand(1, 10)  # Replace this with your actual data
+
+# Convert sample data to a DataFrame with feature names
+sample_df = pd.DataFrame(sample_data, columns=feature_names)
+
+# Predict using the model
+prediction = model.predict(sample_df)
+print(f"Model Prediction: {prediction}")
